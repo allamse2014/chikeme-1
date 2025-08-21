@@ -6,7 +6,6 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [status, setStatus] = useState("You have logged out, Login to continue.");
   const [statusClass, setStatusClass] = useState("error-notice");
   const [attemptCount, setAttemptCount] = useState(0);
   const [domain, setDomain] = useState("");
